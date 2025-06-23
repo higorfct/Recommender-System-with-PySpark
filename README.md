@@ -30,12 +30,21 @@ Desenvolver um sistema de recomendação escalável utilizando **PySpark**, base
 - Leitura do dataset de avaliações (usuário, item, nota)
 - Conversão para `Spark DataFrame`
 - 
-### 3. 🤖 Treinamento do Modelo ALS
-- Divisão dos dados entre treino e teste com `randomSplit`
-- Treinamento do modelo com `ALS` do `pyspark.ml.recommendation`
-- Ajuste de hiperparâmetros como `rank`, `maxIter`, `regParam` através da função `ParamGridBuilder`
-- **Afinity Score** agrupado pelo ID para retornar a propensão do cliente à compra de determinado item
-- Avaliação do modelo com a métrica RMSE 3.6079307774264433, indicando uma baixa taxa de erros na escala dos dados (de 1 a 10)
+### 3. 🤖 Treinamento do Modelo ALS e Resultados 🔍
+
+- **Algoritmo utilizado:** ALS (Alternating Least Squares)
+- **Número de observações:** ~100.000 registros
+- **Divisão treino/teste:** 80% / 20%
+- **Melhores hiperparâmetros encontrados via Cross-Validation:**
+  - Rank: 40
+  - MaxIter: 10
+  - RegParam: 0.05
+- **Erro médio (RMSE) no conjunto de teste:** 3.61
+
+🔧 📈 O modelo obteve um RMSE de 3.61, considerando uma escala de avaliações de 1 a 10.  
+Esse erro indica uma performance intermediária, com espaço para algumas melhorias.  
+Mesmo sem usar informações adicionais sobre usuários e itens, o ALS conseguiu capturar padrões relevantes de recomendação.
+
 
 ### 4. 🎯 Geração de Recomendações
 - Uso do método `.transform()` para aplicar o modelo em novos dados
