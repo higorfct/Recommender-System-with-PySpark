@@ -1,5 +1,5 @@
 
-# 🔍 Projeto 6: Sistema de Recomendação com PySpark 
+# 🔍 Projeto 7: Sistema de Recomendação com PySpark 
 
 Este projeto implementa um sistema de recomendação para uma plataforma de **streaming de filmes e séries** utilizando o algoritmo **Alternating Least Squares (ALS)** com **Apache Spark** (via **PySpark**), focado em oferecer recomendações personalizadas a partir de dados de avaliação de usuários.
 
