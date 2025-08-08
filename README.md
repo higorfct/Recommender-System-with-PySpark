@@ -45,6 +45,33 @@ Desenvolver um sistema de recomendação escalável utilizando **PySpark**, base
 Esse erro indica uma performance intermediária, com espaço para algumas melhorias.  
 Mesmo sem usar informações adicionais sobre usuários e itens, o ALS conseguiu capturar padrões relevantes de recomendação.
 
+---
+
+
+
+## 💼 Impacto Financeiro Estimado
+
+Este sistema de recomendação escalável, desenvolvido com PySpark e ALS, processou cerca de 100 mil avaliações para oferecer recomendações personalizadas.
+
+Considerando um cenário simulado:
+
+- **Base de clientes ativos:** 50.000  
+- **Receita média anual por cliente:** R$ 2.000  
+- **Taxa atual de retenção:** 70%  
+- **Potencial aumento de retenção com recomendações personalizadas:** 12% (sobre a base retida)
+
+### Cálculo do impacto:
+
+1. Clientes retidos atualmente:  
+   50.000 × 70% = 35.000 clientes
+
+2. Clientes adicionais retidos com recomendação:  
+   35.000 × 12% = 4.200 clientes
+
+3. Receita adicional anual:  
+   4.200 × R$ 2.000 = **R$ 8.400.000**
+
+---
 
 ### 4. 🎯 Geração de Recomendações
 - Uso do método `.transform()` para aplicar o modelo em novos dados
