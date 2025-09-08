@@ -1,102 +1,97 @@
 
-# 🔍 Projeto 7: Sistema de Recomendação com PySpark 
+# 🔍 Project 7: Recommendation System with PySpark
 
-Este projeto implementa um sistema de recomendação para uma plataforma de **streaming de filmes e séries** utilizando o algoritmo **Alternating Least Squares (ALS)** com **Apache Spark** (via **PySpark**), focado em oferecer recomendações personalizadas a partir de dados de avaliação de usuários.
+This project implements a recommendation system for a **movie and series streaming platform** using the **Alternating Least Squares (ALS)** algorithm with **Apache Spark** (via **PySpark**), focused on offering personalized recommendations based on user rating data.
 
-## 📌 Objetivo
+## 📌 Objective
 
-Desenvolver um sistema de recomendação escalável utilizando **PySpark**, baseado no algoritmo **ALS (Alternating  Least Squares)**, com capacidade de prever a afinidade entre usuários e itens. O projeto inclui uma interface web interativa para testes e demonstrações, construída com a biblioteca **Gradio**.
+Develop a scalable recommendation system using **PySpark**, based on the **ALS (Alternating Least Squares)** algorithm, capable of predicting affinity between users and items. The project includes an interactive web interface for testing and demonstrations, built with the **Gradio** library.
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Technologies Used
 
 - `PySpark`
 - `ALS (Alternating Least Squares)`
-- `Gradio` (interface web)
+- `Gradio` (web interface)
 - `Pandas`
 - `Matplotlib`
 - `Google Colab / SparkSession`
 
 ---
 
-## 🛠️ Etapas do Projeto
+## 🛠️ Project Stages
 
-### 1. 📦 Importação e Configuração Inicial
-- Configuração da SparkSession
-- Carregamento de bibliotecas essenciais
+### 1. 📦 Import and Initial Setup
+- Configuration of SparkSession
+- Loading essential libraries
 
-### 2. 🧼 Pré-processamento dos Dados
-- Leitura do dataset de avaliações (usuário, item, nota)
-- Conversão para `Spark DataFrame`
-- 
-### 3. 🤖 Treinamento do Modelo ALS e Resultados 🔍
+### 2. 🧼 Data Preprocessing
+- Reading the ratings dataset (user, item, rating)
+- Conversion to `Spark DataFrame`
 
-- **Algoritmo utilizado:** ALS (Alternating Least Squares)
-- **Número de observações:** ~100.000 registros
-- **Divisão treino/teste:** 80% / 20%
-- **Melhores hiperparâmetros encontrados via Cross-Validation:**
+### 3. 🤖 ALS Model Training and Results 🔍
+
+- **Algorithm used:** ALS (Alternating Least Squares)
+- **Number of observations:** ~100,000 records
+- **Train/test split:** 80% / 20%
+- **Best hyperparameters found via Cross-Validation:**
   - Rank: 40
   - MaxIter: 10
   - RegParam: 0.05
-- **Erro médio (RMSE) no conjunto de teste:** 3.61
+- **Mean error (RMSE) on test set:** 3.61
 
-🔧 📈 O modelo obteve um RMSE de 3.61, considerando uma escala de avaliações de 1 a 10.  
-Esse erro indica uma performance intermediária, com espaço para algumas melhorias.  
-Mesmo sem usar informações adicionais sobre usuários e itens, o ALS conseguiu capturar padrões relevantes de recomendação.
-
----
-
-
-
-## 💼 Impacto Financeiro Estimado
-
-Este sistema de recomendação escalável, desenvolvido com PySpark e ALS, processou cerca de 100 mil avaliações para oferecer recomendações personalizadas.
-
-Considerando um cenário simulado:
-
-- **Base de clientes ativos:** 50.000  
-- **Receita média anual por cliente:** R$ 2.000  
-- **Taxa atual de retenção:** 70%  
-- **Potencial aumento de retenção com recomendações personalizadas:** 12% (sobre a base retida)
-
-### Cálculo do impacto:
-
-1. Clientes retidos atualmente:  
-   50.000 × 70% = 35.000 clientes
-
-2. Clientes adicionais retidos com recomendação:  
-   35.000 × 12% = 4.200 clientes
-
-3. Receita adicional anual:  
-   4.200 × R$ 2.000 = **R$ 8.400.000**
+🔧 📈 The model achieved an RMSE of 3.61, considering a rating scale from 1 to 10.  
+This error indicates intermediate performance, with room for some improvements.  
+Even without using additional information about users and items, ALS managed to capture relevant recommendation patterns.
 
 ---
 
-### 4. 🎯 Geração de Recomendações
-- Uso do método `.transform()` para aplicar o modelo em novos dados
-- Ordenação das previsões por pontuação de afinidade (`prediction`)
-- **Afinity Score** agrupado pelo ID para retornar a propensão do cliente à compra de determinado item por pontuação de afinidade
+## 💼 Estimated Financial Impact
 
+This scalable recommendation system, developed with PySpark and ALS, processed around 100,000 ratings to offer personalized recommendations.
 
-### 5. 🌐 Interface Interativa
-- Criação de função `fazer_recomendacao(user_id)` para prever os itens mais prováveis de agradar
-- Implementação de interface `Gradio`
-- Input: ID do usuário
-- Output: Top-N recomendações personalizadas
+Considering a simulated scenario:
+
+- **Active customer base:** 50,000  
+- **Average annual revenue per customer:** R$ 2,000  
+- **Current retention rate:** 70%  
+- **Potential retention increase with personalized recommendations:** 12% (over the retained base)
+
+### Impact calculation:
+
+1. Customers currently retained:  
+   50,000 × 70% = 35,000 customers
+
+2. Additional customers retained with recommendations:  
+   35,000 × 12% = 4,200 customers
+
+3. Additional annual revenue:  
+   4,200 × R$ 2,000 = **R$ 8,400,000**
 
 ---
 
+### 4. 🎯 Recommendation Generation
+- Use of the `.transform()` method to apply the model to new data
+- Sorting predictions by affinity score (`prediction`)
+- **Affinity Score** grouped by ID to return the customer's propensity to purchase a given item based on affinity score
 
-## 🎥 Demonstração
+### 5. 🌐 Interactive Interface
+- Creation of the function `fazer_recomendacao(user_id)` to predict the items most likely to appeal
+- Implementation of a `Gradio` interface
+- Input: User ID
+- Output: Top-N personalized recommendations
 
-A aplicação interativa permite inserir o ID de um usuário e obter uma lista de recomendações personalizadas e em tempo real.
+---
+
+## 🎥 Demonstration
+
+The interactive application allows you to enter a user's ID and get a real-time, personalized recommendation list.
 ![image](https://github.com/user-attachments/assets/79c11bfe-9e81-4c35-9492-eaba42436676)
 
-
 ---
 
-## 🧠 Próximos Passos
+## 🧠 Next Steps
 
-- Adicionar filtros de conteúdo baseado em categorias
-- Integração com banco de dados real (ex: PostgreSQL, MongoDB)
+- Add content filters based on categories
+- Integration with a real database (e.g., PostgreSQL, MongoDB)
