@@ -87,7 +87,8 @@ Considering a simulated scenario:
 ## 🎥 Demonstration
 
 The interactive application allows you to enter a user's ID and get a real-time, personalized recommendation list.
-<img width="1385" height="560" alt="Captura de tela 2025-09-08 105600" src="https://github.com/user-attachments/assets/9e39967a-b8ff-431b-8d2c-9d97864734d7" />
+<img width="1268" height="618" alt="image" src="https://github.com/user-attachments/assets/39cd2067-dbc9-4d36-8659-e0e2e53723fd" />
+
 
 ---
 
