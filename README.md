@@ -7,6 +7,16 @@ This project implements a recommendation system for a **movie and series streami
 Develop a scalable recommendation system using **PySpark**, based on the **ALS (Alternating Least Squares)** algorithm, capable of predicting affinity between users and items. The project includes an interactive web interface for testing and demonstrations, built with the **Gradio** library.
 
 ---
+## 🚀 How to use
+
+1. **Clone the repository and install dependencies:**
+    ```bash
+    git clone https://github.com/higorfct/Recommender-System-with-PySpark
+    cd Recommender-System-with-PySpark
+    pip install -r requirements.txt
+    ```
+
+---
 
 ## 🚀 Technologies Used
 
